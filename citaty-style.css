@@ -1,0 +1,20 @@
+body {
+  padding-top: 50px;
+}
+
+.main.container {
+  padding: 40px 15px;
+}
+
+#page-citat-dne {
+    text-align: center;
+}
+
+#zobrazeny-citat {
+    font: italic 180% "Georgia", serif;
+    margin: 1em;
+}
+
+#text-noveho-citatu {
+    width: 25em;
+}

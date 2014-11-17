@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Citát dne</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="citaty-style.css">
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="javascript:jdiNaCitatDne();">Citát dne</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li id="li-citat-dne"><a href="javascript:jdiNaCitatDne();">Dnešní citát</a></li>
+                <li id="li-uprav-citaty"><a href="javascript:jdiNaUpravCitaty();">Přidej citáty</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+        <div class="main container">
+            <noscript>
+                <div class="alert alert-danger" role="alert">V prohlížeči je <b>vypnutý Javascript</b>, takhle nic nebude fungovat.</div>
+            </noscript>
+
+          <div id="page-citat-dne">
+            <p>
+                <button type="button" class="btn btn-default btn-lg" onclick="ukazCitat();">
+                  <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Ukaž citát!
+                </button>
+            </p>
+
+            <p id="zobrazeny-citat">
+                
+            </p>
+          </div>
+
+          <div id="page-uprav-citaty">
+
+          <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-novy-citat" aria-expanded="false" aria-controls="navbar-novy-citat">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">Nový citát</a>
+              </div>
+              <div class="collapse navbar-collapse" id="navbar-novy-citat">
+                <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                    <input class="form-control" placeholder="..." type="text" id="text-noveho-citatu">
+                  </div>
+                  <button type="submit" class="btn btn-default" onclick="pridejCitat();"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Přidej</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+            <div class="panel panel-default">
+              <table class="table" id="tabulka-citatu">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Text citátu</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>
+                <a href="javascript:stahniCitaty();">Stáhni si všechny citáty.</a>
+            </p>
+            <p>
+                <a href="javascript:if(confirm('Opravdu smazat všechny citáty?'))odstranVsechnyCitaty();">Odstranit vše.</a>
+            </p>
+          </div>
+
+        </div><!-- /.container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="citaty-app.js"></script>
+  </body>
+</html>
