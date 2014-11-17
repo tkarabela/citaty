@@ -76,12 +76,19 @@ function odstranVsechnyCitaty() {
     vypisTabulkuCitatu();
 }
 
-function pridejCitat() {
+function pridejCitaty() {
     var text = $("#text-noveho-citatu").val();
-    if (text == "") return;
+    var zadaneCitaty = text.match(/[^\r\n]+/g);
+
+    for (var i = 0; i < zadaneCitaty.length; i++) {
+        var citat = zadaneCitaty[i];
+        if (document.citaty.indexOf(citat)) {
+            console.log("Pridan citat " + citat);
+            document.citaty.push(citat);
+        }
+    }
     
     $("#text-noveho-citatu").val("");
-    document.citaty.push(text);
     ulozCitaty();
     vypisTabulkuCitatu();
 }
@@ -116,5 +123,4 @@ $(document).ready(function(){
     jdiNaCitatDne();
     nactiCitaty();
     vypisTabulkuCitatu();
-
 });
